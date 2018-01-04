@@ -1,7 +1,11 @@
 # Road segmentation with upsampled neural networks
 
-- [Introduction](#intro)
-- [Implementation](#implementation)
+- [Introduction](https://github.com/Goschjann/road_segmentation_project#intro)
+- [Part 1: Explanation](https://github.com/Goschjann/road_segmentation_project#part-1-explanation-ot-the-model-architecture)
+	- [Max-Pooling](https://github.com/Goschjann/road_segmentation_project#max-pooling) 
+	- [Upsampling](https://github.com/Goschjann/road_segmentation_project#upsampling)
+	- [Skip Connections](https://github.com/Goschjann/road_segmentation_project#skip-connections)
+- [Implementation](https://github.com/Goschjann/road_segmentation_project#part-2-implementation)
 
 ----------
 ## [Intro](#intro)
@@ -50,7 +54,7 @@ Check for instance the most upper skip connection. For the next convolution (whi
 
 ------------------
 
-## Implementation
+## Part 2: Implementation
 
 
 
