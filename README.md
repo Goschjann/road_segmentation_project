@@ -10,11 +10,15 @@
 - [Part 2: Implementation](https://github.com/Goschjann/road_segmentation_project#part-2-implementation)
 
 ----------
+
+__Reminder:__ This is still work in progress with eventually preliminary results. 
+
+----------
 ## Intro
 
-Within this university project, Jann Goschenhofer and Niklas Klein implemented a neural net for pixelwise detection of roads on aerial imagery. The project was executed in cooperation with an industry partner on the partner's private data. Therefore, this public version is applied on the [massachusets road data set](https://www.cs.toronto.edu/~vmnih/data/) kindly provided by Volodymir Mnih.
+Within this university project we, [Jann Goschenhofer](https://github.com/Goschjann) and [Niklas Klein](https://github.com/NiklasDL), implemented a neural net for pixelwise detection of roads on aerial imagery. The project was executed in cooperation with an industry partner on the partner's private data. Therefore, this public version is applied on the [massachusets road data set](https://www.cs.toronto.edu/~vmnih/data/) kindly provided by Volodymir Mnih.
 
-This readme is structured in two parts: in part 1, we explain our model architecture and try to give some intuition for our model. Also we visualize some of the results and compare them with Mnih's approach from his [PhD-Thesis](https://www.cs.toronto.edu/~vmnih/docs/Mnih_Volodymyr_PhD_Thesis.pdf) written in 2013. In the second part we describe the usage of our code to reproduce the results. 
+This readme is structured in two parts: in part 1, we explain our model architecture and try to give some intuition for our model. Also we visualize some of the results and compare them with Mnih's approach from his [PhD-Thesis](https://www.cs.toronto.edu/~vmnih/docs/Mnih_Volodymyr_PhD_Thesis.pdf). In the second part, we describe the usage of our code to reproduce the results. 
 
 ------------------
 
