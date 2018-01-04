@@ -5,10 +5,12 @@
 	- [Max-Pooling](https://github.com/Goschjann/road_segmentation_project#max-pooling) 
 	- [Upsampling](https://github.com/Goschjann/road_segmentation_project#upsampling)
 	- [Skip Connections](https://github.com/Goschjann/road_segmentation_project#skip-connections)
+	- [Training](https://github.com/Goschjann/road_segmentation_project#training)
+	- [Results](https://github.com/Goschjann/road_segmentation_project#skip-connections)
 - [Part 2: Implementation](https://github.com/Goschjann/road_segmentation_project#part-2-implementation)
 
 ----------
-## [Intro](#intro)
+## Intro
 
 Within this university project, Jann Goschenhofer and Niklas Klein implemented a neural net for pixelwise detection of roads on aerial imagery. The project was executed in cooperation with an industry partner on the partner's private data. Therefore, this public version is applied on the [massachusets road data set](https://www.cs.toronto.edu/~vmnih/data/) kindly provided by Volodymir Mnih.
 
@@ -52,9 +54,49 @@ Now that we made it back to the desired dimensionality we have to re-integrate t
 
 Check for instance the most upper skip connection. For the next convolution (white-orange block with depth 128 to blueblock with depth 64), the net can choose between 1) features that were extracted at a very early stage (white) and contain abstract but rich spatial information and 2) features from below (orange) that were extracted through the whole architecture and contain very detailed features with low spatial information. 
 
+---------------
+
+### Training
+
+We implemented the model in keras and used the following training parameters:
+
+- Optimizer: Adam (lr = 0.00001, beta_1 = 0.9, beta_2 = 0.999, epsilon = 1e-08, decay = 1e-08)
+- Activation: relu between convlayers and sigmoid for last dense layer
+- Regularization: two dropout layers with p = 0.5 and early stopping with patience = 10
+- batch size: 1
+- amount of train images: 800 patches in dimension 512x512
+- amount of test images: 166 512x512 patches from Minh's test set for comparison
+- Thresholding of patches: we only included patches with > 5% road pixels in the training
+- Threshold for probability scores: we selected 0.4 as optimal threshold for the F1 measure
+
+Check our code for more details. As always with hyperparameters, they can be tuned and tweeked to the max and we would be super happy to receive your feedback if you toy around with our code. 
+
 ------------------
 
+### Results
+
+#### Error measure
+
+As this is a highly unbalanced binary classification task, we use the F1-Score as performance evaluation and also report precision and recall.  
+
+#### Visualization
+
+This is
+
+
+#### Comparison with Volodymir's results
+
+
+
+
 ## Part 2: Implementation
+
+The code is structured as follows:
+
+1. datagathering: execute the script _get\_mnih\_data.py_ to download the data. Before execution, adjust the paths accordingly.  
+2. preprocessing: execute the srcipt _preprocess.py_ to crop the data in 512x512 patches and brings them in a format that is readable by the successive scripts. Adjust the paths accordingly. 
+3. training: execute the script _train.py_ to train the architecture and store the model as a hdf5 file. Again, adjust the paths accordingly and do not forget to name your model. Also, there is the option to include a log-file. 
+4. evaluation: contains two scripts: _test.py_ and _test\_loop.py_. Both use the test data to report performance measures and visualizations for each of the test images. In addition, _test\_loop.py_ tests and stores different threshold values for the probability scores that are outputed by our net. We found a threshold of 0.4 optimal for our performance measure, but this can change in other architectures, precision-recall-weighting etc. 
 
 
 
