@@ -45,7 +45,7 @@ In our case, we are indeed interested in this spatial information as we want to 
 ### Upsampling
 
 Within this step, we use a nearest neighbor interpolation to double the dimensionality of the feature maps in the the second half of our architecture. Check this figure for an illustration
-![uspsampling](unet_2c.png)
+![uspsampling](/figures/unet_2c.png)
 
 There exists a wide range of [upsampling techniques](LINK MISSING) and it would be very interesting to evaluate the performance with different methods. 
 
