@@ -8,6 +8,8 @@
 	- [Training](https://github.com/Goschjann/road_segmentation_project#training)
 	- [Results](https://github.com/Goschjann/road_segmentation_project#skip-connections)
 - [Part 2: Implementation](https://github.com/Goschjann/road_segmentation_project#part-2-implementation)
+	- [Code Structure](https://github.com/Goschjann/road_segmentation_project#code-structure)
+	- [Dependencies](https://github.com/Goschjann/road_segmentation_project#dependencies)
 
 ----------
 
@@ -98,8 +100,13 @@ __Preliminary Results:__ This visualizations are exracted from a net trained for
 
 TODO: include comparison table here, see issues
 
+-------------
 
 ## Part 2: Implementation
+
+-------------
+
+### Code structure
 
 The code is structured as follows:
 
@@ -108,6 +115,24 @@ The code is structured as follows:
 3. training: execute the script _train.py_ to train the architecture and store the model as a hdf5 file. Again, adjust the paths accordingly and do not forget to name your model. Also, there is the option to include a log-file. 
 4. evaluation: contains two scripts: _test.py_ and _test\_loop.py_. Both use the test data to report performance measures and visualizations for each of the test images. In addition, _test\_loop.py_ tests and stores different threshold values for the probability scores that are outputed by our net. We found a threshold of 0.4 optimal for our performance measure, but this can change in other architectures, precision-recall-weighting etc. 
 5. custommodule: this local library contains all necessary helper functions for the other scripts. As this is still work in progress, the library also contains many functions that are not currently in use. We tried to document the several functions and their functionality in a understandable manner.  
+
+-------------
+
+
+### Dependencies
+
+Our code works with Python 3.5.1. with the following dependencies:
+
+1. tensorflow==1.4.0
+2. Keras==2.1.1
+3. h5py==2.7.1
+4. scikit-image==0.13.1
+5. scikit-learn==0.19.1
+6. numpy==1.13.3
+7. matplotlib==2.1.0
+8. scipy==1.0.0
+9. Pillow==4.3.0
+10. beautifulsoup4==4.6.0
 
 
 
