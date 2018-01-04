@@ -9,12 +9,12 @@ Within this university project, Jann Goschenhofer and Niklas Klein implemented a
 
 This readme is structured in two parts: in part 1, we explain our model architecture and try to give some intuition for our model. Also we visualize some of the results and compare them with Mnih's approach from his [PhD-Thesis](https://www.cs.toronto.edu/~vmnih/docs/Mnih_Volodymyr_PhD_Thesis.pdf) written in 2013. In the second part we describe the usage of our code to reproduce the results. 
 
-## Part 1: explanation ot the model architecture
+## Part 1: Explanation ot the model architecture
 
-The task at hand was to create a model that outputs a probability mask in the same dimension as the input rgb image. In this mask, a probability score $$$ P(pixel_{ij} = road | input image) $$$ for each input pixel from the input image is contained. This is scetched in  
+The task at hand was to create a model that outputs a probability mask in the same dimension as the input rgb image. In this mask, a probability score $P(pixel_{ij} = road | input image)$ for each input pixel from the input image is contained. This is scetched in  
 ![scetch of the task](/figures/architecture_1.png). 
 
-How do we do that? As this is a image processing task and we want to include the context information of each pixel for the prediciton, we want to use Convolutional Neural Networks (CNNs). This model class is the state of the art in image processing and extracts feature maps from the input image that are later used for the classification via a convolution operation.
+How do we do that? As this is an image processing task and we want to include the context information of each pixel for the prediction, we want to use Convolutional Neural Networks (CNNs). This model class is the state of the art in image processing and extracts feature maps from the input image that are later used for the classification via a convolution operation. Our specific architecture roughly follows the [U-Net architecture](https://arxiv.org/abs/1505.04597) that was used for cell detection on biomedical images. 
 
 ### Max-pooling
 
