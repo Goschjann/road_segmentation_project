@@ -26,7 +26,7 @@ This readme is structured in two parts: in part 1, we explain our model architec
 
 ## Part 1: Explanation ot the model architecture
 
-The task at hand was to create a model that outputs a probability mask in the same dimension as the input rgb image. In this mask, a probability score $P(pixel_{ij} = road | input image)$ for each input pixel from the input image is contained. This is scetched in  
+The task at hand was to create a model that outputs a probability mask in the same width and height as the input rgb image. In this mask, a probability score $P(pixel_{ij} = road | input image)$ for each input pixel from the input image is contained. This is scetched in  
 ![scetch of the task](/figures/architecture_1.png). 
 
 How do we do that? As this is an image processing task and we want to include the context information of each pixel for the prediction, we want to use Convolutional Neural Networks (CNNs). This model class is the state of the art in image processing and extracts feature maps from the input image that are later used for the classification via a convolution operation. Our specific architecture roughly follows the [U-Net architecture](https://arxiv.org/abs/1505.04597) that was used for cell detection on biomedical images. 
