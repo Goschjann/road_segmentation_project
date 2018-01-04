@@ -1,0 +1,14 @@
+# exclude trained model
+*.h5
+
+# exclude log files 
+*.log
+
+# exclude visualization of results
+results*
+
+# exclude R code files
+*.R
+*.Rhistory
+
+
