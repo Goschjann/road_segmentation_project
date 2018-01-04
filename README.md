@@ -5,7 +5,7 @@
 	- [Max-Pooling](https://github.com/Goschjann/road_segmentation_project#max-pooling) 
 	- [Upsampling](https://github.com/Goschjann/road_segmentation_project#upsampling)
 	- [Skip Connections](https://github.com/Goschjann/road_segmentation_project#skip-connections)
-- [Implementation](https://github.com/Goschjann/road_segmentation_project#part-2-implementation)
+- [Part 2: Implementation](https://github.com/Goschjann/road_segmentation_project#part-2-implementation)
 
 ----------
 ## [Intro](#intro)
