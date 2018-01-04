@@ -49,10 +49,12 @@ There exists a wide range of [upsampling techniques](LINK MISSING) and it would 
 
 ### Skip Connections
 
-Now that we made it back to the desired dimensionality we have to re-integrate the spatial information that was lost in the pooling steps. Therefore we us e__skip connections__ (also termed __merge layers__) which are illustrated as the brown arrows between the two halfs of our U-shaped architecture:  
+Now that we made it back to the desired dimensionality we have to re-integrate the spatial information that was lost in the pooling steps. Therefore we use __skip connections__ (also termed __merge layers__) which are illustrated as the brown arrows between the two halfs of our complete U-shaped architecture:  
 ![complete architecture](/figures/unet_7.png)
 
 Check for instance the most upper skip connection. For the next convolution (white-orange block with depth 128 to blueblock with depth 64), the net can choose between 1) features that were extracted at a very early stage (white) and contain abstract but rich spatial information and 2) features from below (orange) that were extracted through the whole architecture and contain very detailed features with low spatial information. 
+
+
 
 ---------------
 
@@ -97,6 +99,7 @@ The code is structured as follows:
 2. preprocessing: execute the srcipt _preprocess.py_ to crop the data in 512x512 patches and brings them in a format that is readable by the successive scripts. Adjust the paths accordingly. 
 3. training: execute the script _train.py_ to train the architecture and store the model as a hdf5 file. Again, adjust the paths accordingly and do not forget to name your model. Also, there is the option to include a log-file. 
 4. evaluation: contains two scripts: _test.py_ and _test\_loop.py_. Both use the test data to report performance measures and visualizations for each of the test images. In addition, _test\_loop.py_ tests and stores different threshold values for the probability scores that are outputed by our net. We found a threshold of 0.4 optimal for our performance measure, but this can change in other architectures, precision-recall-weighting etc. 
+5. custommodule: this local library contains all necessary helper functions for the other scripts. As this is still work in progress, the library also contains many functions that are not currently in use. We tried to document the several functions and their functionality in a understandable manner.  
 
 
 
