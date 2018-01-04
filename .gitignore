@@ -4,6 +4,9 @@
 # exclude log files 
 *.log
 
+# exclude pycache
+*.pyc
+
 # exclude visualization of results
 results*
 
