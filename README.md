@@ -89,8 +89,8 @@ As this is a highly unbalanced binary classification task, we use the F1-Score a
 
 __Preliminary Results:__ This visualizations are exracted from a net trained for only 5 epochs on 200 image patches. This should just give the reader an idea for the final visualizations. 
 
-![result 1](/figure/niceresult27.png)
-*visualization of test image: true positives are marked in yellow, false positives in red, and false negatives in blue*
+![result 1](/figures/niceresult27.png)
+*Visualization of a test image: true positives are marked in yellow, false positives in red, and false negatives in blue*
 
 
 
