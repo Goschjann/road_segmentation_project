@@ -6,7 +6,6 @@ Input: preprocessed test images
 Output: .csv with results and visualized images
 """
 
-
 from __future__ import division, print_function, absolute_import
 from keras.models import Model, load_model
 from PIL import Image
@@ -18,18 +17,17 @@ import csv
 custommodule.checker()
 
 # set path for storage of evaulation images and a summary of the net's scores
-result_storage_path = "/home/jgucci/Desktop/mnih_data/results3/"
-test_folder = storage = "/home/jgucci/Desktop/mnih_data/test/preprocessed/"
-
+test_folder = storage = "/home/jgucci/Desktop/projects/road_segmentation_public/test/preprocessed/"
+result_storage_path = "/home/jgucci/Desktop/projects/road_segmentation_public/results/"
 
 # read test data
-y_test = custommodule.read_label_masks(path = test_folder,
+y_test = custommodule.read_label_masks(path = test_folder,s
                                        mask_name = 'lab',
                                        suffix = '.png',
                                        amount_masks = 165,
                                        crop_pixels = 0,
                                        output_shape = [512, 512],
-                                       progress_step = 10,
+                                       progress_step = 50,
                                        separation = False)
 
 x_test = custommodule.read_input_maps(path = test_folder,
@@ -38,11 +36,10 @@ x_test = custommodule.read_input_maps(path = test_folder,
                                       amount_maps = 165,
                                       crop_pixels = 0,
                                       output_shape = [512, 512, 3],
-                                      progress_step = 10)
-
+                                      progress_step = 50)
 
 # load model
-model = load_model("/home/jgucci/PycharmProjects/mnih_reproduce/training/mnih_040118_1.h5")
+model = load_model('{}mnih_25022019_big.h5'.format(result_storage_path))
 model.summary()
 
 # predict and reshape the numpy.ndarrays for the prediction
@@ -62,7 +59,7 @@ x_repic = np.ndarray.astype(x_test*255, dtype='uint8')
 prediction_thresholded = custommodule.threshold_predictions(prediction=prediction_reshaped, threshold=0.4)
 
 # limit for plotting of test images
-limit_test = 40
+limit_test = len(x_test)
 
 # initialize lists that store the performance measure values for all predicted images
 f1_list = []

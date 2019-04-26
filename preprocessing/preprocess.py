@@ -16,8 +16,11 @@ import custommodule
 import os
 custommodule.checker()
 
+storage = "/home/jgucci/Desktop/projects/road_segmentation_public/"
+
 # read mnih data, preprocess and store in new folder "preprocessed"
-storage = "/home/jgucci/Desktop/mnih_data/"
+storage = "/home/jgucci/Desktop/projects/road_segmentation_public/"
+
 
 # iterate over all 3 dataset
 datasets = ['train', 'valid', 'test']

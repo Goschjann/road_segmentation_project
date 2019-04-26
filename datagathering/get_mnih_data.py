@@ -1,5 +1,7 @@
 '''
-Crawl all images from Mnih's webpage
+Crawl labeled satellite images from Mnih Volodymir's webpage
+https://www.cs.toronto.edu/~vmnih/data/mass_roads/
+
 using beautiful soup as html-parser for the links
 '''
 
@@ -7,10 +9,8 @@ from bs4 import BeautifulSoup
 import os
 import urllib.request
 
-
-
 # set folder for storage
-storage = "/home/jgucci/Desktop/mnih_data/"
+storage = "/home/jgucci/Desktop/projects/road_segmentation_public/"
 
 # get all 3 data sets (train, valid, test)
 datasets = ['train', 'valid', 'test']
@@ -51,8 +51,6 @@ for data in datasets:
 
         # retrieve images from linklist
         for link in linklist:
-            if counter <= 400:
+            if counter <= 1200:
                 urllib.request.urlretrieve(url = link, filename = storagefolder + type + str(counter) +'.tiff')
                 counter += 1
-
-

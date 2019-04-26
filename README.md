@@ -13,7 +13,7 @@
 
 ----------
 
-__Reminder:__ This is still work in progress with eventually preliminary results. 
+__Reminder:__ This is still work in progress with eventually preliminary results. **RIGHT NOW WORKING ON IT**
 
 ----------
 ## Intro
@@ -71,7 +71,7 @@ We implemented the model in keras and used the following training parameters:
 - Optimizer: Adam (lr = 0.00001, beta_1 = 0.9, beta_2 = 0.999, epsilon = 1e-08, decay = 1e-08)
 - Activation: relu between convlayers and sigmoid for last dense layer
 - Regularization: two dropout layers with p = 0.5 and early stopping with patience = 10
-- batch size: 1
+- batch size: 4
 - amount of train images: 800 patches in dimension 512x512
 - amount of test images: 166 512x512 patches from Minh's test set for comparison
 - Thresholding of patches: we only included patches with > 5% road pixels in the training
@@ -89,7 +89,7 @@ As this is a highly unbalanced binary classification task, we use the F1-Score a
 
 #### Visualization
 
-__Preliminary Results:__ This visualizations are exracted from a net trained for only 5 epochs on 200 image patches. This should just give the reader an idea for the final visualizations. 
+__Preliminary Results:__ This visualizations are extracted from a net trained for only 5 epochs on 200 image patches. This should just give the reader an idea for the final visualizations. 
 
 ![result 1](/figures/niceresult27.png)
 *Visualization of a test image: true positives are marked in yellow, false positives in red, and false negatives in blue*
@@ -121,7 +121,7 @@ The code is structured as follows:
 
 ### Dependencies
 
-Our code works with Python 3.5.1. with the following dependencies:
+Our code works with Python 3.5.1. and the following dependencies:
 
 1. tensorflow==1.4.0
 2. Keras==2.1.1
